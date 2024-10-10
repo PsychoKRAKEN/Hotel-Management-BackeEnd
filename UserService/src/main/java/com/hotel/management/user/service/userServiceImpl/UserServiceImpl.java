@@ -57,8 +57,6 @@ public class UserServiceImpl implements UserService{
 			return null;
 		}
 		
-		
-		
 		UserEntity user= userEntity.orElseThrow(()-> new ResourseNotFoundException("User Not Found with Given User Id : "+userId));
 		
 		List<Rating> ratings=ratingService.getAllRatingByUserId(user.getUserId()).getBody();
